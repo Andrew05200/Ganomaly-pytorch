@@ -18,7 +18,28 @@
 
 
 这是选取阈值的截图：![a](https://github.com/lcd111/Ganomaly-pytorch/blob/master/1.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 这是测试的截图：![a](https://github.com/lcd111/Ganomaly-pytorch/blob/master/Ganomaly-pytorch/测试.png)
+
+
+
+
+
+
+
 
 
 
