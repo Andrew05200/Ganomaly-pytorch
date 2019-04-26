@@ -33,24 +33,18 @@ class Options():
         self.parser.add_argument('--ndf', type=int, default=64)
 
         self.parser.add_argument('--extralayers', type=int, default=0, help='Number of extra layers on gen and disc')
-
+         #这个参数用于模型定义的时候，我其实一直不太懂模型里的extralayers是做什么的。
+            
         self.parser.add_argument('--device', type=str, default='gpu', help='Device: gpu | cpu')
 
         self.parser.add_argument('--gpu_ids', type=str, default='0,1,2,3', help='gpu ids: e.g. 0  0,1,2, 0,2. use -1 for CPU')
-
+         #gpu用的是0，1，2，3 如果不是这几块，我记得会报错。可以修改成你自己的gpu
+            
         self.parser.add_argument('--ngpu', type=int, default=4, help='number of GPUs to use')
 
         self.parser.add_argument('--name', type=str, default='cifar_name', help='name of the experiment')
 
         self.parser.add_argument('--model', type=str, default='ganomaly', help='chooses which model to use. ganomaly')
-
-        self.parser.add_argument('--display_server', type=str, default="http://localhost", help='visdom server of the web display')
-
-        self.parser.add_argument('--display_port', type=int, default=8097, help='visdom port of the web display')
-
-        self.parser.add_argument('--display_id', type=int, default=0, help='window id of the web display')
-
-        self.parser.add_argument('--display', action='store_true', help='Use visdom.')
 
         self.parser.add_argument('--outf', default='/home/lab-lu.chengdong/Pictures/output', help='folder to output images and model checkpoints')
 
@@ -64,11 +58,9 @@ class Options():
 
         # Train
 
-        self.parser.add_argument('--print_freq', type=int, default=80, help='frequency of showing training results on console')
 
-        self.parser.add_argument('--save_image_freq', type=int, default=100, help='frequency of saving real and fake images')
 
-        self.parser.add_argument('--save_test_images', action='store_true', help='Save test images for demo.')
+    
 
         self.parser.add_argument('--load_weights', action='store_true', help='Load the pretrained weights')
 
