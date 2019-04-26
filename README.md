@@ -12,4 +12,9 @@
 
 2.代码里在训练的时候进行可视化的代码我都注销了，没有进行可视化。
 
+3.这是我第一次用cifar10当数据集训练的截图，这个auc的值并不高。所以我后来才换了celeba。
 
+![a](https://github.com/lcd111/Ganomaly-pytorch/blob/master/Ganomaly-pytorch/image.png)
+
+
+这是选取阈值的截图：
