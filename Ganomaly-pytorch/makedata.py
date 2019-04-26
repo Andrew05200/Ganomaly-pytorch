@@ -3,24 +3,23 @@ import torchvision.datasets as datasets
 import torch
 import numpy as np 
 import torchvision.transforms as transforms
-from torchvision.datasets import MNIST
 from torchvision.datasets import ImageFolder
 
 def load_data(opt):
 
     if opt.dataroot == '': 
 
-        opt.dataroot = './data/{}'.format(opt.dataset)  #dataroot是./data/mnist  如果dataset的参数是mnist
+        opt.dataroot = './data/{}'.format(opt.dataset)  
 
 
 
-    if opt.dataset in ['cifar10']:
+    if opt.dataset in ['cifar10']:#这里主要是我第一次用的数据集是cifar10，但是数据集有点少。我后来换成了celeba，所以这里就没改。
 
-        splits = ['train', 'testing']
+        splits = ['train', 'test']  #训练集train用来训练参数，验证集test根据AUC的值来挑选参数
 
-        drop_last_batch = {'train': True, 'testing': False}
+        drop_last_batch = {'train': True, 'test': False}
 
-        shuffle = {'train': True, 'testing': True}
+        shuffle = {'train': True, 'test': True}
 
         transform = transforms.Compose([transforms.Resize(opt.isize),
 
@@ -44,6 +43,6 @@ def load_data(opt):
 
                                                      drop_last=drop_last_batch[x]) for x in splits}
 
-        return dataloader  #从dataloader里面进行迭代的时候 有两个内容：图片和标签
+        return dataloader  #从dataloader里面进行迭代的时候 有两个内容：图片和标签。源码的这部分很棒，我觉得用字典的形式来加载数据集方便且快
     
     
