@@ -9,3 +9,7 @@
 
 
 ![数据集的格式](https://github.com/lcd111/Ganomaly-pytorch/blob/master/Ganomaly-pytorch/数据集的格式.png)
+
+2.代码里在训练的时候进行可视化的代码我都注销了，没有进行可视化。
+
+
